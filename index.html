@@ -26,7 +26,7 @@
       letter-spacing: 2px;
     }
 
-    /* Navigation line */
+    /* Navigation */
     .nav {
       display: flex;
       justify-content: space-evenly;
@@ -81,6 +81,17 @@
     .dropdown:hover .dropdown-content {
       display: block;
     }
+
+    /* Contact section */
+    .contact {
+      margin: 60px 40px;
+      text-align: left;
+    }
+
+    .contact h2 {
+      font-size: 28px;
+      color: #333;
+    }
   </style>
 </head>
 
@@ -93,18 +104,23 @@
 
   <!-- Navigation -->
   <div class="nav">
-    <a href="#">Start</a>
+    <a href="index.html">Start</a>
 
     <div class="dropdown">
       <button>Vehicles ▾</button>
       <div class="dropdown-content">
-        <a href="#">Used Cars</a>
-        <a href="#">Used Trucks</a>
-        <a href="#">Used Flatbed</a>
+        <a href="used-cars.html">Used Cars</a>
+        <a href="used-trucks.html">Used Trucks</a>
+        <a href="used-flatbed.html">Used Flatbed</a>
       </div>
     </div>
 
-    <a href="#">Information</a>
+    <a href="information.html">Information</a>
+  </div>
+
+  <!-- Contact Information -->
+  <div class="contact">
+    <h2>Contact Information</h2>
   </div>
 
 </body>
