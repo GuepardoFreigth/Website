@@ -1,12 +1,112 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Website</title>
+  <meta charset="UTF-8">
+  <title>JaxCargo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    /* Banner */
+    .banner {
+      background-color: #1f2933;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .banner h1 {
+      margin: 0;
+      font-size: 64px;
+      letter-spacing: 2px;
+    }
+
+    /* Navigation line */
+    .nav {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      background-color: white;
+      padding: 20px 0;
+      font-size: 18px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    /* Dropdown */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown button {
+      background: none;
+      border: none;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #333;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 180px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      margin-top: 10px;
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 12px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  </style>
 </head>
+
 <body>
-  <h1 style="font-size: 60px; text-align: center; margin-top: 20%;">
-    HELLO 👋 Cristina
-  </h1>
+
+  <!-- Banner -->
+  <div class="banner">
+    <h1>Jax Auto</h1>
+  </div>
+
+  <!-- Navigation -->
+  <div class="nav">
+    <a href="#">Start</a>
+
+    <div class="dropdown">
+      <button>Vehicles ▾</button>
+      <div class="dropdown-content">
+        <a href="#">Used Cars</a>
+        <a href="#">Used Trucks</a>
+        <a href="#">Used Flatbed</a>
+      </div>
+    </div>
+
+    <a href="#">Information</a>
+  </div>
+
 </body>
 </html>
 
