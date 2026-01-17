@@ -1,34 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Used Cars | Jax Auto</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Used Cars | JaxCargo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
 
-  <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      margin: 40px;
-      background-color: #f4f4f4;
-    }
-    h1 {
-      color: #1f2933;
-    }
-    a {
-      display: inline-block;
-      margin-top: 20px;
-      text-decoration: none;
-      font-weight: bold;
-      color: #0077cc;
-    }
-  </style>
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .slider-container {
+            width: 500px;
+            height: 500px;
+            margin: 30px auto;
+            position: relative;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slider-container img,
+        .slider-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+        }
+
+        .slider-container img.active,
+        .slider-container video.active {
+            display: block;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 30px;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .arrow.left {
+            left: 10px;
+        }
+
+        .arrow.right {
+            right: 10px;
+        }
+
+        .vehicle-info {
+            width: 500px;
+            margin: 20px auto 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            line-height: 1.6;
+        }
+    </style>
 </head>
-
 <body>
-  <h1>Used Cars</h1>
-  <p>Browse our selection of reliable, inspected used cars. More listings coming soon.</p>
 
-  <a href="index.html">← Back to Home</a>
+<h1>Used Cars</h1>
+
+<div class="slider-container">
+    <span class="arrow left" onclick="prevSlide()">&#10094;</span>
+    <span class="arrow right" onclick="nextSlide()">&#10095;</span>
+
+    <img src="mazda_2010_1.jpeg" class="active">
+    <img src="mazda_2010_2.jpeg">
+    <img src="mazda_2010_3.jpeg">
+    <img src="mazda_2010_4.jpeg">
+    <img src="mazda_2010_5.jpeg">
+    <img src="mazda_2010_6.jpeg">
+    <img src="mazda_2010_7.jpeg">
+    <img src="mazda_2010_8.jpeg">
+    <img src="mazda_2010_9.jpeg">
+
+    <video controls>
+        <source src="mazda_2010.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<div class="vehicle-info">
+    <strong>Vehicle:</strong> Mazda CX-9 Touring<br>
+    <strong>Year:</strong> 2010<br>
+    <strong>Color:</strong> Negro<br>
+    <strong>Miles:</strong> 118,664<br>
+    <strong>Price:</strong> $5,000
+</div>
+
+<script>
+    let slides = document.querySelectorAll('.slider-container img, .slider-container video');
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        slides[index].classList.add('active');
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
+    }
+</script>
+
 </body>
 </html>
 
