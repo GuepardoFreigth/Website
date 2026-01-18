@@ -6,125 +6,143 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
+    /* ---------- RESET ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
     body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: #f4f4f4;
+      background-color: #f7f7f7;
+      color: #111;
     }
 
-    /* Banner */
-    .banner {
-      background-color: #1f2933;
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
+    /* ---------- NAVBAR ---------- */
+    nav {
+      background-color: #111;
+      padding: 16px 40px;
     }
 
-    .banner h1 {
-      margin: 0;
-      font-size: 64px;
-      letter-spacing: 2px;
-    }
-
-    /* Navigation */
-    .nav {
+    nav ul {
+      list-style: none;
       display: flex;
-      justify-content: space-evenly;
       align-items: center;
-      background-color: white;
-      padding: 20px 0;
-      font-size: 18px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      gap: 30px;
     }
 
-    .nav a {
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-    }
-
-    /* Dropdown */
-    .dropdown {
+    nav ul li {
       position: relative;
     }
 
-    .dropdown button {
-      background: none;
-      border: none;
-      font-size: 18px;
-      font-weight: bold;
-      cursor: pointer;
-      color: #333;
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 12px;
+      display: block;
+      font-size: 16px;
     }
 
-    .dropdown-content {
+    nav ul li a:hover {
+      background-color: #333;
+      border-radius: 4px;
+    }
+
+    /* ---------- DROPDOWN ---------- */
+    .dropdown-menu {
       display: none;
       position: absolute;
+      top: 100%;
+      left: 0;
       background-color: white;
-      min-width: 180px;
-      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-      margin-top: 10px;
-      z-index: 1;
+      min-width: 200px;
+      border-radius: 6px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      z-index: 1000;
     }
 
-    .dropdown-content a {
-      display: block;
-      padding: 12px;
-      text-decoration: none;
-      color: #333;
-	transition: transform 0.2s, background-color 0.2s;
+    .dropdown-menu li a {
+      color: #111;
+      padding: 12px 18px;
+      white-space: nowrap;
     }
 
-    .dropdown-content a:hover {
-      background-color: #f1f1f1;
-	transform: scale(1.1); 
-	cursor: pointer;
+    .dropdown-menu li a:hover {
+      background-color: #f2f2f2;
     }
 
-    .dropdown:hover .dropdown-content {
+    /* KEEP MENU OPEN */
+    .dropdown:hover .dropdown-menu {
       display: block;
     }
 
-    /* Contact section */
-    .contact {
-      margin: 60px 40px;
-      text-align: left;
+    /* ---------- MAIN CONTENT ---------- */
+    main {
+      padding: 60px 40px;
+      text-align: center;
     }
 
-    .contact h2 {
-      font-size: 28px;
-      color: #333;
+    main h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    main p {
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      margin-top: 80px;
+      padding: 20px;
+      text-align: center;
+      background-color: #111;
+      color: white;
+      font-size: 14px;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Banner -->
-  <div class="banner">
-    <h1>Jax Auto</h1>
-  </div>
+  <!-- NAVBAR -->
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
 
-  <!-- Navigation -->
-  <div class="nav">
-    <a href="index.html">Start</a>
+      <li class="dropdown">
+        <a href="#">Vehicles ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Cars</a></li>
+          <li><a href="#">Trucks</a></li>
+          <li><a href="#">Motorcycles</a></li>
+          <li><a href="#">Heavy Equipment</a></li>
+        </ul>
+      </li>
 
-    <div class="dropdown">
-      <button>Vehicles ▾</button>
-      <div class="dropdown-content">
-        <a href="used-cars.html">Used Cars</a>
-        <a href="used-trucks.html">Used Trucks</a>
-        <a href="used-flatbed.html">Used Flatbed</a>
-      </div>
-    </div>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
 
-    <a href="information.html">Information</a>
-  </div>
+  <!-- MAIN CONTENT -->
+  <main>
+    <h1>Big Hello 👋</h1>
+    <p>
+      Welcome to JaxCargo.  
+      This site is hosted on GitHub Pages and connected to a custom domain.
+      More content coming soon!
+    </p>
+  </main>
 
-  <!-- Contact Information -->
-  <div class="contact">
-    <h2>Contact Information</h2>
-  </div>
+  <!-- FOOTER -->
+  <footer>
+    © 2026 JaxCargo. All rights reserved.
+  </footer>
 
 </body>
 </html>
