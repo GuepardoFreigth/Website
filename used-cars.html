@@ -86,6 +86,10 @@
     .back-link:hover {
       transform: scale(1.1);
     }
+	.arrow {
+  z-index: 10;
+}
+
   </style>
 </head>
 
@@ -108,7 +112,7 @@
   <img src="mazda_2010_7.jpeg">
   <img src="mazda_2010_8.jpeg">
   <img src="mazda_2010_9.jpeg">
-  <video controls>
+  <video>
     <source src="mazda_2010.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
@@ -137,7 +141,7 @@
   <img src="jeep_2011_6.jpeg">
   <img src="jeep_2011_7.jpeg">
   <img src="jeep_2011_8.jpeg">
-  <video controls>
+  <video>
     <source src="jeep_2011.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
@@ -185,6 +189,28 @@
     const newIndex = (s.currentIndex - 1 + s.slides.length) % s.slides.length;
     showSlide(sliderId, newIndex);
   }
+	function showSlide(sliderId, index) {
+  const s = sliders[sliderId];
+
+  // Pause all videos in this slider
+  s.slides.forEach(slide => {
+    slide.classList.remove('active');
+    if (slide.tagName === 'VIDEO') {
+      slide.pause();
+      slide.currentTime = 0;
+    }
+  });
+
+  s.slides[index].classList.add('active');
+
+  // Auto-play video if it's a video
+  if (s.slides[index].tagName === 'VIDEO') {
+    s.slides[index].play();
+  }
+
+  s.currentIndex = index;
+}
+
 </script>
 
 </body>
